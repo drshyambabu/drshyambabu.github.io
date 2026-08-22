@@ -1,67 +1,122 @@
-document.getElementById("year").textContent=new Date().getFullYear();
-
-const OWNER="drshyambabu";
-const REPO="drshyambabu.github.io";
-const ROOT="study-material";
-const categories=[...document.querySelectorAll("#categories button")];
-const resourcesEl=document.getElementById("resources");
-const search=document.getElementById("search");
-const statusEl=document.getElementById("status");
-const emptyEl=document.getElementById("empty");
-const heading=document.getElementById("heading");
-let allFiles=[],active="all";
-
-const labels={
-  all:"All Resources",physics:"Physics",history:"History",polity:"Indian Polity",
-  "general-science":"General Science",geography:"Geography",economy:"Economy",
-  "competitive-exams":"Competitive Exams","previous-papers":"Previous Papers"
+document.getElementById("year").textContent = new Date().getFullYear();
+const OWNER = "drshyambabu",
+  REPO = "drshyambabu.github.io",
+  BRANCH = "main",
+  ROOT = "study-material";
+const labels = {
+  all: "All Resources",
+  physics: "Physics",
+  history: "History",
+  polity: "Indian Polity",
+  "general-science": "General Science",
+  geography: "Geography",
+  economy: "Economy",
+  "competitive-exams": "Competitive Exams",
+  "previous-papers": "Previous Papers",
 };
-
-function titleFromFile(path){
-  const name=path.split("/").pop().replace(/\.[^.]+$/,"");
-  return name.replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+const icons = {
+  physics: "⚛️",
+  history: "🏛️",
+  polity: "⚖️",
+  "general-science": "🔬",
+  geography: "🌍",
+  economy: "📈",
+  "competitive-exams": "🎯",
+  "previous-papers": "📝",
+};
+let files = [],
+  active = "all";
+const el = (id) => document.getElementById(id);
+function title(path) {
+  return path
+    .split("/")
+    .pop()
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 }
-function categoryFromPath(path){
-  const parts=path.toLowerCase().split("/");
-  const folder=parts[parts.indexOf(ROOT)+1]||"";
-  return folder;
+function category(path) {
+  let p = path.split("/"),
+    i = p.indexOf(ROOT);
+  return i >= 0 && p[i + 1] ? p[i + 1].toLowerCase() : "";
 }
-function iconFor(cat){
-  return {physics:"⚛️",history:"🏛️",polity:"⚖️","general-science":"🔬",geography:"🌍",economy:"📈","competitive-exams":"🎯","previous-papers":"📝"}[cat]||"📄";
-}
-function render(){
-  const q=search.value.trim().toLowerCase();
-  const filtered=allFiles.filter(f=>(active==="all"||f.category===active)&&(!q||f.title.toLowerCase().includes(q)||f.path.toLowerCase().includes(q)));
-  resourcesEl.innerHTML="";
-  filtered.forEach(f=>{
-    const a=document.createElement("a");
-    a.className="resource"; a.href=f.url; a.target="_blank" rel="noopener";
-    a.innerHTML=`<span class="icon">${iconFor(f.category)}</span><div><b>${f.title}</b><small>${labels[f.category]||"Study Material"} • PDF</small></div>`;
-    resourcesEl.appendChild(a);
+async function load() {
+  el("status").textContent = "Reading GitHub repository…";
+  const u = `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`;
+  const r = await fetch(u, {
+    headers: { Accept: "application/vnd.github+json" },
   });
-  emptyEl.hidden=filtered.length!==0;
-  statusEl.textContent=`${filtered.length} resource${filtered.length===1?"":"s"}`;
+  if (!r.ok) throw Error("GitHub API " + r.status);
+  const d = await r.json();
+  files = (d.tree || [])
+    .filter(
+      (x) =>
+        x.type === "blob" &&
+        /\.pdf$/i.test(x.path) &&
+        x.path.toLowerCase().startsWith(ROOT + "/")
+    )
+    .map((x) => {
+      let c = category(x.path);
+      return {
+        path: x.path,
+        title: title(x.path),
+        category: c,
+        url: `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${x.path .split("/") .map(encodeURIComponent) .join("/")}`,
+      };
+    });
+  render();
 }
-async function loadFolder(folder){
-  const url=`https://api.github.com/repos/${OWNER}/${REPO}/contents/${ROOT}/${folder}`;
-  const r=await fetch(url,{headers:{"Accept":"application/vnd.github+json"}});
-  if(!r.ok)return[];
-  const data=await r.json();
-  return Array.isArray(data)?data.filter(x=>x.type==="file"&&/\.pdf$/i.test(x.name)).map(x=>({title:titleFromFile(x.path),path:x.path,url:x.html_url,category:folder})):[];
+function render() {
+  const q = el("search").value.toLowerCase().trim();
+  const shown = files.filter(
+    (f) =>
+      (active === "all" || f.category === active) &&
+      (!q ||
+        f.title.toLowerCase().includes(q) ||
+        f.path.toLowerCase().includes(q))
+  );
+  el("resources").innerHTML = shown
+    .map(
+      (f) =>
+        `<a class="resource" href="${ f.url }" target="_blank" rel="noopener"><span class="icon">${ icons[f.category] || "📄" }</span><div><b>${f.title}</b><small>${ labels[f.category] || "Study Material" } • PDF</small></div></a>`
+    )
+    .join("");
+  el("empty").hidden = shown.length > 0;
+  if (!shown.length)
+    el("empty").textContent = files.length
+      ? "No matching resources in this category."
+      : "No PDFs found inside study-material yet.";
+  el("status").textContent = `${shown.length} resource${ shown.length === 1 ? "" : "s" } available`;
 }
-async function loadRepository(){
-  statusEl.textContent="Loading repository…";
-  const folders=categories.map(x=>x.dataset.cat).filter(x=>x!=="all");
-  const results=await Promise.all(folders.map(loadFolder));
-  allFiles=results.flat();
-  if(allFiles.length===0){
-    statusEl.textContent="No PDFs found yet";
-    emptyEl.hidden=false;
-    emptyEl.textContent="No PDFs found yet. Create the study-material folders and upload your first PDF.";
-  }else render();
-}
-categories.forEach(c=>c.addEventListener("click",()=>{categories.forEach(x=>x.classList.remove("active"));c.classList.add("active");active=c.dataset.cat;heading.textContent=labels[active];render()}));
-search.addEventListener("input",render);
-loadRepository().catch(()=>{statusEl.textContent="Repository could not be loaded";emptyEl.hidden=false;emptyEl.textContent="Please check that the study-material folders exist in the GitHub repository."});
-
-document.getElementById("menu").onclick=()=>{const n=document.querySelector("nav");n.style.display=n.style.display==="flex"?"none":"flex";n.style.flexDirection="column";n.style.position="absolute";n.style.right="4%";n.style.top="68px";n.style.background="#fff";n.style.padding="18px";n.style.border="1px solid #e5eaf0";n.style.borderRadius="12px"};
+document.querySelectorAll("#categories button").forEach(
+  (b) =>
+    (b.onclick = () => {
+      document
+        .querySelectorAll("#categories button")
+        .forEach((x) => x.classList.remove("active"));
+      b.classList.add("active");
+      active = b.dataset.cat;
+      el("heading").textContent = labels[active];
+      render();
+    })
+);
+el("search").oninput = render;
+load().catch((e) => {
+  el("status").textContent = "Could not read GitHub repository";
+  el("empty").hidden = false;
+  el("empty").textContent =
+    "Repository could not be read. Check that the repository is public and refresh.";
+  console.error(e);
+});
+document.getElementById("menu").onclick = () => {
+  let n = document.querySelector("nav");
+  n.style.display = n.style.display === "flex" ? "none" : "flex";
+  n.style.flexDirection = "column";
+  n.style.position = "absolute";
+  n.style.right = "4%";
+  n.style.top = "68px";
+  n.style.background = "#fff";
+  n.style.padding = "18px";
+  n.style.border = "1px solid #e5eaf0";
+  n.style.borderRadius = "12px";
+};
