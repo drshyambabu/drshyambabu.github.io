@@ -1,53 +1,485 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Dr. Shyam Babu — Study & Academic Repository">
-<title>Dr. Shyam Babu | Study & Academic Repository</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description" content="Dr. Shyam Babu — Assistant Professor of Physics, academic researcher and educator. Explore research interests, publications, teaching resources and study materials.">
+
+<meta name="author" content="Dr. Shyam Babu">
+<meta name="robots" content="index, follow">
+
+<title>Dr. Shyam Babu | Assistant Professor of Physics | Academic & Research</title>
+
+<link rel="canonical" href="https://drshyambabu.github.io/">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header><div class="container nav">
-<a class="brand" href="#home"><b class="logo">SB</b><span><strong>Dr. Shyam Babu</strong><small>Academic & Research Repository</small></span></a>
+
+<header>
+<div class="container nav">
+
+<a class="brand" href="#home">
+<b class="logo">SB</b>
+<span>
+<strong>Dr. Shyam Babu</strong>
+<small>Academic & Research Repository</small>
+</span>
+</a>
+
 <button id="menu">☰</button>
-<nav><a href="#home">Home</a><a href="#about">About</a><a href="#teaching">Teaching</a><a href="#research">Research</a><a href="#repository">Study Repository</a><a href="#contact">Contact</a></nav>
-</div></header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#teaching">Teaching</a>
+<a href="#research">Research</a>
+<a href="#repository">Study Repository</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+</header>
+
 
 <main>
-<section id="home" class="hero"><div class="container heroGrid"><div>
+
+<!-- HOME -->
+<section id="home" class="hero">
+
+<div class="container heroGrid">
+
+<div>
+
 <p class="eyebrow">ACADEMICS • TEACHING • RESEARCH</p>
-<h1>Dr. Shyam Babu</h1><h2>Assistant Professor of Physics</h2>
-<p class="lead">A growing academic space for teaching resources, research information, notes and useful study material.</p>
-<a class="btn" href="#repository">Explore Study Repository</a> <a class="btn light" href="#about">Academic Profile</a>
-</div><div class="card heroCard"><div class="avatar">SB</div><h3>Physics • Materials Science</h3><p>Teaching, research and student learning resources.</p><div class="tags"><span>Physics</span><span>Research</span><span>Study Material</span></div></div></div></section>
 
-<section id="about" class="section"><div class="container two"><div><p class="eyebrow">ABOUT</p><h2>Academic Profile</h2><p>Dr. Shyam Babu is an Assistant Professor of Physics with research interests in materials science, nanomagnetism and non-collinear magnetic systems.</p><p>This website brings together academic information, research work and educational resources for students and researchers.</p></div><div class="card"><h3>Research Interests</h3><div class="tags"><span>Non-collinear magnetism</span><span>Magnetic skyrmions</span><span>Multiferroics</span><span>Nanomagnetism</span><span>Spintronics</span></div></div></div></section>
+<h1>Dr. Shyam Babu</h1>
 
-<section id="teaching" class="section soft"><div class="container"><p class="eyebrow">TEACHING</p><h2>Teaching & Learning</h2><div class="grid3"><article class="card"><b>B.Sc. Physics</b><p>Concepts, derivations, lecture notes and study resources.</p></article><article class="card"><b>M.Sc. Physics</b><p>Advanced Physics topics and academic material.</p></article><article class="card"><b>Competitive Exams</b><p>Selected resources for GATE, UGC-NET and other examinations.</p></article></div></div></section>
+<h2>Assistant Professor of Physics</h2>
 
-<section id="research" class="section"><div class="container"><p class="eyebrow">RESEARCH</p><h2>Research & Publications</h2><div class="grid3"><article class="card"><b>RESEARCH</b><h3>Research Interests</h3><p>Materials Science, nanomagnetism, skyrmions and spintronic materials.</p></article><article class="card"><b>PUBLICATIONS</b><h3>Research Papers</h3><p>Journal publications, DOI information and selected academic work.</p></article><article class="card"><b>PROJECTS</b><h3>Projects & Collaborations</h3><p>Research proposals, collaborations and academic activities.</p></article></div></div></section>
+<p class="lead">
+A growing academic space for teaching resources, research information,
+notes and useful study material.
+</p>
 
-<section id="repository" class="section soft"><div class="container">
-<div class="repoTop"><div><p class="eyebrow">AUTOMATIC STUDY REPOSITORY</p><h2>Study & Academic Repository</h2><p>Upload files to the configured GitHub repository folders and this page can discover them automatically.</p></div><input id="search" placeholder="Search notes, subject or file…"></div>
-<div id="categories" class="categories">
-<button class="active" data-cat="all">📚 <b>All Resources</b><small>Everything</small></button>
-<button data-cat="physics">⚛️ <b>Physics</b><small>B.Sc. • M.Sc. • GATE/NET</small></button>
-<button data-cat="history">🏛️ <b>History</b><small>Ancient • Medieval • Modern</small></button>
-<button data-cat="polity">⚖️ <b>Indian Polity</b><small>Constitution • Governance</small></button>
-<button data-cat="general-science">🔬 <b>General Science</b><small>Physics • Chemistry • Biology</small></button>
-<button data-cat="geography">🌍 <b>Geography</b><small>India • World</small></button>
-<button data-cat="economy">📈 <b>Economy</b><small>Indian Economy</small></button>
-<button data-cat="competitive-exams">🎯 <b>Competitive Exams</b><small>UPPSC • GATE • NET</small></button>
-<button data-cat="previous-papers">📝 <b>Previous Papers</b><small>PYQs & Practice</small></button>
+<a class="btn" href="#repository">
+Explore Study Repository
+</a>
+
+<a class="btn light" href="#about">
+Academic Profile
+</a>
+
 </div>
-<div class="repoBar"><h3 id="heading">All Resources</h3><span id="status">Loading repository…</span></div>
-<div id="resources" class="resources"></div>
-<div id="empty" class="empty" hidden>No resources found. Upload a PDF to one of the study-material folders and refresh.</div>
-<div class="tip"><b>Automatic workflow:</b> Put a PDF inside a subject folder in GitHub. The website discovers files from the repository and creates the resource cards automatically.</div>
-</div></section>
 
-<section id="contact" class="section"><div class="container contact"><div><p class="eyebrow">CONNECT</p><h2>Academic Profiles</h2><p>Add your verified Google Scholar, ORCID, Vidwan, ResearchGate and LinkedIn links.</p></div><div class="links"><a href="#">Google Scholar</a><a href="#">ORCID</a><a href="#">Vidwan</a><a href="#">ResearchGate</a><a href="#">LinkedIn</a></div></div></section>
+
+<div class="card heroCard">
+
+<div class="avatar">SB</div>
+
+<h3>Physics • Materials Science</h3>
+
+<p>
+Teaching, research and student learning resources.
+</p>
+
+<div class="tags">
+<span>Physics</span>
+<span>Research</span>
+<span>Study Material</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+<div class="container two">
+
+<div>
+
+<p class="eyebrow">ABOUT</p>
+
+<h2>Academic Profile</h2>
+
+<p>
+Dr. Shyam Babu is an Assistant Professor of Physics with research
+interests in materials science, nanomagnetism and non-collinear
+magnetic systems.
+</p>
+
+<p>
+This website brings together academic information, research work
+and educational resources for students and researchers.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Research Interests</h3>
+
+<div class="tags">
+
+<span>Non-collinear magnetism</span>
+<span>Magnetic skyrmions</span>
+<span>Multiferroics</span>
+<span>Nanomagnetism</span>
+<span>Spintronics</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEACHING -->
+<section id="teaching" class="section soft">
+
+<div class="container">
+
+<p class="eyebrow">TEACHING</p>
+
+<h2>Teaching & Learning</h2>
+
+<div class="grid3">
+
+<article class="card">
+
+<b>B.Sc. Physics</b>
+
+<p>
+Concepts, derivations, lecture notes and study resources.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<b>M.Sc. Physics</b>
+
+<p>
+Advanced Physics topics and academic material.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<b>Competitive Exams</b>
+
+<p>
+Selected resources for GATE, UGC-NET and other examinations.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESEARCH -->
+<section id="research" class="section">
+
+<div class="container">
+
+<p class="eyebrow">RESEARCH</p>
+
+<h2>Research & Publications</h2>
+
+<div class="grid3">
+
+<article class="card">
+
+<b>RESEARCH</b>
+
+<h3>Research Interests</h3>
+
+<p>
+Materials Science, nanomagnetism, skyrmions and spintronic materials.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<b>PUBLICATIONS</b>
+
+<h3>Research Papers</h3>
+
+<p>
+Journal publications, DOI information and selected academic work.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<b>PROJECTS</b>
+
+<h3>Projects & Collaborations</h3>
+
+<p>
+Research proposals, collaborations and academic activities.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STUDY REPOSITORY -->
+<section id="repository" class="section soft">
+
+<div class="container">
+
+<div class="repoTop">
+
+<div>
+
+<p class="eyebrow">AUTOMATIC STUDY REPOSITORY</p>
+
+<h2>Study & Academic Repository</h2>
+
+<p>
+Upload files to the configured GitHub repository folders and this page
+can discover them automatically.
+</p>
+
+</div>
+
+<input
+id="search"
+placeholder="Search notes, subject or file…"
+>
+
+</div>
+
+
+<div id="categories" class="categories">
+
+<button class="active" data-cat="all">
+📚 <b>All Resources</b>
+<small>Everything</small>
+</button>
+
+
+<button data-cat="physics">
+⚛️ <b>Physics</b>
+<small>B.Sc. • M.Sc. • GATE/NET</small>
+</button>
+
+
+<button data-cat="history">
+🏛️ <b>History</b>
+<small>Ancient • Medieval • Modern</small>
+</button>
+
+
+<button data-cat="polity">
+⚖️ <b>Indian Polity</b>
+<small>Constitution • Governance</small>
+</button>
+
+
+<button data-cat="geography">
+🌍 <b>Geography</b>
+<small>India • World</small>
+</button>
+
+
+<button data-cat="economy">
+📈 <b>Economy</b>
+<small>Indian Economy</small>
+</button>
+
+
+<button data-cat="general-science">
+🔬 <b>General Science</b>
+<small>Physics • Chemistry • Biology</small>
+</button>
+
+
+<button data-cat="competitive-exams">
+🎯 <b>Competitive Exams</b>
+<small>UPPSC • GATE • NET</small>
+</button>
+
+
+<button data-cat="previous-papers">
+📝 <b>Previous Papers</b>
+<small>PYQs & Practice</small>
+</button>
+
+</div>
+
+
+<div class="repoBar">
+
+<h3 id="heading">All Resources</h3>
+
+<span id="status">Loading repository…</span>
+
+</div>
+
+
+<div id="resources" class="resources"></div>
+
+
+<div id="empty" class="empty" hidden>
+
+No resources found. Upload a PDF to one of the study-material folders and refresh.
+
+</div>
+
+
+<div class="tip">
+
+<b>Automatic workflow:</b>
+
+Put a PDF inside a subject folder in GitHub.
+The website discovers files from the repository and creates the resource cards automatically.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ACADEMIC PROFILES -->
+<section id="contact" class="section">
+
+<div class="container contact">
+
+<div>
+
+<p class="eyebrow">CONNECT</p>
+
+<h2>Academic Profiles</h2>
+
+<p>
+Connect with Dr. Shyam Babu through verified academic and professional profiles.
+</p>
+
+</div>
+
+
+<div class="links">
+
+
+<!-- GOOGLE SCHOLAR -->
+<a
+href="https://scholar.google.com/citations?hl=en&user=-Z7cWC0AAAAJ"
+target="_blank"
+rel="noopener noreferrer"
+title="Google Scholar Profile"
+>
+🎓 Google Scholar
+</a>
+
+
+<!-- ORCID -->
+<a
+href="https://orcid.org/0000-0002-2892-9175"
+target="_blank"
+rel="noopener noreferrer"
+title="ORCID Profile"
+>
+🟢 ORCID
+</a>
+
+
+<!-- VIDWAN -->
+<a
+href="#"
+title="Vidwan profile — link will be added"
+onclick="return false;"
+>
+🏛️ Vidwan
+</a>
+
+
+<!-- RESEARCHGATE -->
+<a
+href="https://www.researchgate.net/profile/Shyam-Babu-5"
+target="_blank"
+rel="noopener noreferrer"
+title="ResearchGate Profile"
+>
+🔬 ResearchGate
+</a>
+
+
+<!-- LINKEDIN -->
+<a
+href="https://www.linkedin.com/in/dr-shyam-babu-22aa5a166"
+target="_blank"
+rel="noopener noreferrer"
+title="LinkedIn Profile"
+>
+💼 LinkedIn
+</a>
+
+
+<!-- FACEBOOK -->
+<a
+href="https://www.facebook.com/share/1D27x9dLiP/"
+target="_blank"
+rel="noopener noreferrer"
+title="Facebook Profile"
+>
+📘 Facebook
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
 </main>
-<footer><div class="container"><b>Dr. Shyam Babu</b><small>Academic & Research Repository · © <span id="year"></span></small></div></footer>
+
+
+<footer>
+
+<div class="container">
+
+<b>Dr. Shyam Babu</b>
+
+<small>
+Academic & Research Repository · ©
+<span id="year"></span>
+</small>
+
+</div>
+
+</footer>
+
+
 <script src="script.js"></script>
-</body></html>
+
+</body>
+</html>
