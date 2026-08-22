@@ -1,4 +1,6 @@
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 html{
   scroll-behavior:smooth;
@@ -28,7 +30,7 @@ a{
 header{
   position:sticky;
   top:0;
-  z-index:5;
+  z-index:10;
   background:#fff;
   border-bottom:1px solid #e6ebf2;
 }
@@ -88,39 +90,50 @@ header{
   padding:90px 0;
   overflow:hidden;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(245,249,255,0.94) 0%,
-      rgba(245,249,255,0.86) 42%,
-      rgba(237,244,255,0.70) 100%
-    ),
-    url("background.jpg") center center / cover no-repeat;
+  background-image:url("./background.jpg");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
 }
 
-/* subtle professional overlay */
+/* Transparent overlay */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.08);
+
+  background:rgba(240,246,253,0.48);
+
+  z-index:0;
   pointer-events:none;
 }
 
+/* Content above background */
 .heroGrid{
   position:relative;
   z-index:1;
+
   display:grid;
   grid-template-columns:1.2fr .8fr;
   gap:60px;
   align-items:center;
 }
 
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.heroContent{
+  position:relative;
+  z-index:2;
+}
+
 .eyebrow{
   font-size:12px;
   font-weight:800;
   letter-spacing:.16em;
-  color:#4169a5;
+  color:#315f91;
 }
 
 .hero h1{
@@ -128,28 +141,34 @@ header{
   line-height:1;
   margin:0 0 12px;
   letter-spacing:-.045em;
-  color:#102943;
+  color:#102b48;
 }
 
 .hero h2{
   font-size:23px;
-  color:#1e3853;
+  margin:0 0 10px;
+  color:#173b60;
 }
 
 .heroAffiliation{
+  font-size:16px;
   font-weight:650;
-  color:#36516d;
+  color:#274b6e;
 }
 
 .lead{
   font-size:18px;
-  color:#607085;
+  color:#40566d;
   max-width:650px;
 }
 
 .heroText{
   max-width:650px;
-  color:#627084;
+  color:#52677d;
+}
+
+.heroButtons{
+  margin-top:8px;
 }
 
 .btn{
@@ -161,7 +180,11 @@ header{
   background:#16456f;
   color:#fff;
   font-weight:750;
-  box-shadow:0 6px 18px rgba(22,69,111,.15);
+  box-shadow:0 5px 15px rgba(22,69,111,.18);
+}
+
+.btn:hover{
+  transform:translateY(-1px);
 }
 
 .btn.light{
@@ -170,114 +193,105 @@ header{
   border:1px solid #ccd6e3;
 }
 
-.heroButtons{
-  margin-bottom:28px;
-}
+
+/* =========================
+   HERO HIGHLIGHTS
+========================= */
 
 .heroHighlights{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
+  gap:18px;
   margin-top:20px;
 }
 
 .heroHighlights div{
-  min-width:150px;
-  padding:12px 14px;
-  border:1px solid rgba(214,225,237,.9);
-  border-radius:12px;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(6px);
-}
-
-.heroHighlights strong,
-.heroHighlights span{
-  display:block;
+  display:flex;
+  flex-direction:column;
+  padding:8px 12px;
+  background:rgba(255,255,255,.68);
+  border-radius:10px;
+  backdrop-filter:blur(5px);
 }
 
 .heroHighlights strong{
-  font-size:13px;
-  color:#234e76;
+  color:#173e64;
+  font-size:14px;
 }
 
 .heroHighlights span{
-  font-size:11px;
-  color:#718096;
+  font-size:12px;
+  color:#53677c;
 }
 
 
 /* =========================
-   PROFILE PHOTO
+   PROFILE AREA
 ========================= */
 
 .heroProfile{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  position:relative;
+  z-index:2;
+  text-align:center;
 }
 
 .profileImageBox{
-  width:180px;
-  height:180px;
+  width:210px;
+  height:210px;
   margin:0 auto 20px;
+
   border-radius:50%;
   overflow:hidden;
-  border:5px solid #fff;
-  box-shadow:0 14px 40px rgba(20,45,79,.22);
-  background:#eef3f9;
+
+  border:6px solid #fff;
+
+  box-shadow:
+    0 15px 40px rgba(15,40,70,.28);
+
+  background:#fff;
 }
 
 .profileImageBox img{
   width:100%;
   height:100%;
+
   object-fit:cover;
+
   object-position:center 18%;
+
   display:block;
 }
 
 .profileCard{
-  width:100%;
-  max-width:340px;
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(223,231,239,.95);
+  max-width:360px;
+  margin:auto;
+
+  padding:25px;
+
+  background:rgba(255,255,255,.82);
+
+  border:1px solid rgba(255,255,255,.9);
+
   border-radius:17px;
-  padding:27px;
-  box-shadow:0 18px 55px rgba(23,56,93,.12);
+
+  box-shadow:0 15px 40px rgba(20,45,75,.15);
+
   backdrop-filter:blur(8px);
 }
 
 .profileCard h3{
   margin-top:0;
+  color:#173e64;
+}
+
+.profileCard p{
+  color:#53677c;
 }
 
 
 /* =========================
-   CARDS
+   TAGS
 ========================= */
-
-.card{
-  background:#fff;
-  border:1px solid #dfe7ef;
-  border-radius:17px;
-  padding:27px;
-}
-
-.heroCard{
-  padding:32px;
-  box-shadow:0 18px 55px #17385d18;
-}
-
-.avatar{
-  width:96px;
-  height:96px;
-  border-radius:50%;
-  background:#17395f;
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-size:30px;
-  font-weight:800;
-}
 
 .tags{
   display:flex;
@@ -290,6 +304,35 @@ header{
   background:#eef3f9;
   border-radius:20px;
   font-size:12px;
+}
+
+
+/* =========================
+   GENERAL CARDS
+========================= */
+
+.card{
+  background:#fff;
+  border:1px solid #dfe7ef;
+  border-radius:17px;
+  padding:27px;
+}
+
+.heroCard{
+  padding:32px;
+  box-shadow:0 18px 55px rgba(23,56,93,.10);
+}
+
+.avatar{
+  width:96px;
+  height:96px;
+  border-radius:50%;
+  background:#17395f;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:30px;
+  font-weight:800;
 }
 
 
@@ -414,7 +457,7 @@ header{
 }
 
 .resource:hover{
-  box-shadow:0 7px 18px #142d4f12;
+  box-shadow:0 7px 18px rgba(20,45,79,.07);
 }
 
 .resource .icon{
@@ -467,6 +510,7 @@ header{
   border-radius:9px;
   color:#254d78;
   font-weight:650;
+  background:#fff;
 }
 
 
@@ -505,12 +549,7 @@ footer small{
 
   .hero{
     padding:65px 0;
-    background:
-      linear-gradient(
-        rgba(245,249,255,.90),
-        rgba(237,244,255,.94)
-      ),
-      url("background.jpg") center center / cover no-repeat;
+    background-position:center center;
   }
 
   .heroGrid,
@@ -519,17 +558,13 @@ footer small{
     grid-template-columns:1fr;
   }
 
-  .heroContent{
-    text-align:left;
-  }
-
   .heroProfile{
     margin-top:20px;
   }
 
   .profileImageBox{
-    width:210px;
-    height:210px;
+    width:190px;
+    height:190px;
   }
 
   .grid3,
@@ -548,12 +583,8 @@ footer small{
   }
 
   .heroHighlights{
-    display:grid;
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:52px;
+    flex-direction:column;
+    gap:8px;
   }
 
 }
