@@ -4323,191 +4323,64 @@ footer small{
   color:#91a4bb;
 }
 
+/* =========================================================
+   FINAL PORTRAIT PHOTO
+   Full image - no crop - no circle
+========================================================= */
 
-/* =========================
-   MOBILE
-========================= */
+.heroProfile{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
 
-@media(max-width:820px){
+.heroPortrait{
+  width:280px !important;
+  margin:0 auto !important;
+  padding:0 !important;
 
-  .nav nav{
-    display:none;
-  }
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
 
-  .nav button{
-    display:block;
-    border:0;
-    background:none;
-    font-size:25px;
-  }
+  overflow:visible !important;
+}
 
-  .hero{
-    padding:65px 0;
-    background-position:center center;
-  }
+.heroPortrait img{
+  display:block !important;
 
-  .heroGrid,
-  .two,
-  .contact{
-    grid-template-columns:1fr;
-  }
+  width:280px !important;
+  height:auto !important;
 
-  .heroProfile{
-    margin-top:20px;
-  }
+  max-width:100% !important;
 
-  .profileImageBox{
-    width:190px;
-    height:190px;
-  }
+  margin:0 !important;
+  padding:0 !important;
 
-  .grid3,
-  .categories,
-  .resources{
-    grid-template-columns:1fr;
-  }
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
 
-  .repoTop{
-    display:block;
-  }
-
-  .repoTop input{
-    width:100%;
-    margin-top:10px;
-  }
-
-  .heroHighlights{
-    flex-direction:column;
-    gap:8px;
-  }
-
+  object-fit:initial !important;
 }
 
 
 /* =========================================================
-   PROFILE PHOTO — RECTANGULAR PORTRAIT
+   MOBILE
 ========================================================= */
-
-.heroProfile{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.profileImageBox{
-  width:340px !important;
-  height:460px !important;
-  margin:0 auto !important;
-  padding:0 !important;
-
-  border:none !important;
-  outline:none !important;
-  border-radius:14px !important;
-
-  overflow:hidden !important;
-
-  background:#eaf2f6;
-
-  box-shadow:0 20px 50px rgba(15,45,65,.20) !important;
-}
-
-.profileImageBox img{
-  width:100% !important;
-  height:100% !important;
-
-  display:block !important;
-  margin:0 !important;
-  padding:0 !important;
-
-  border:none !important;
-  border-radius:0 !important;
-
-  object-fit:cover !important;
-  object-position:center center !important;
-}
-
-
-/* TABLET / MOBILE */
 
 @media(max-width:820px){
 
-  .profileImageBox{
-    width:300px !important;
-    height:405px !important;
-  }
-
-}
-
-
-@media(max-width:480px){
-
-  .profileImageBox{
-    width:270px !important;
-    height:365px !important;
-  }
-
-}
-
-   /* =========================================================
-   RIGHT SIDE PROFILE — PORTRAIT PHOTO
-========================================================= */
-
-.heroProfile{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-}
-
-.heroProfile .profileImageBox{
-  width:320px !important;
-  height:430px !important;
-
-  margin:0 auto !important;
-  padding:0 !important;
-
-  border:0 !important;
-  outline:0 !important;
-  border-radius:0 !important;
-
-  overflow:hidden !important;
-  background:transparent !important;
-
-  box-shadow:none !important;
-}
-
-.heroProfile .profileImageBox img{
-  display:block !important;
-
-  width:100% !important;
-  height:100% !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  border:0 !important;
-  outline:0 !important;
-  border-radius:0 !important;
-
-  object-fit:cover !important;
-  object-position:center center !important;
-}
-
-
-/* ---------- MOBILE ---------- */
-
-@media(max-width:820px){
-
-  .heroProfile{
-    margin-top:35px;
-  }
-
-  .heroProfile .profileImageBox{
+  .heroPortrait{
     width:280px !important;
-    height:380px !important;
+  }
+
+  .heroPortrait img{
+    width:280px !important;
+    height:auto !important;
   }
 
 }
 
-.nav nav a::after{
-  content:"";
