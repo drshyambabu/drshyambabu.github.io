@@ -1919,4 +1919,21 @@ footer small{
     max-height:112px !important;
   }
 
+   .heroHighlights .hero-stat a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.heroHighlights .hero-stat a strong,
+.heroHighlights .hero-stat a small {
+    display: block;
+}
+
+.heroHighlights .hero-stat a:hover {
+    text-decoration: none;
+}
+
 }
