@@ -639,38 +639,28 @@ section{
 }
 
 
-/* =========================================================
-   ABOUT
-========================================================= */
+/* =========================
+   ABOUT SECTION — FULL WIDTH
+   ========================= */
 
-#about{
-  background:#ffffff;
+#about .about-content {
+    width: 100%;
+    max-width: 100%;
 }
 
-.two{
-  display:grid;
-
-  grid-template-columns:
-    minmax(0,1.05fr)
-    minmax(300px,.95fr);
-
-  gap:70px;
-
-  align-items:start;
+#about .about-content p {
+    width: 100%;
+    max-width: 100%;
 }
 
-.two > div{
-  min-width:0;
+/* Remove any two-column restriction */
+#about {
+    display: block;
 }
 
-.two .eyebrow{
-  margin-bottom:12px;
+#about > * {
+    max-width: 100%;
 }
-
-.two p{
-  max-width:650px;
-}
-
 
 /* =========================================================
    CARDS
