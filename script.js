@@ -12,6 +12,11 @@ const labels = {
   geography: "Geography",
   economy: "Economy",
   "social-issues": "Social Issues",
+
+  "ai-technology": "AI & Technology",
+  environment: "Environment",
+  economics: "Economics",
+
   "competitive-exams": "Competitive Exams",
   "previous-papers": "Previous Papers",
 };
@@ -23,6 +28,11 @@ const icons = {
   geography: "🌍",
   economy: "📈",
   "social-issues": "🌐",
+
+  "ai-technology": "🤖",
+  environment: "🌱",
+  economics: "📊",
+
   "competitive-exams": "🎯",
   "previous-papers": "📝",
 };
