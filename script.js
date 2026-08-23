@@ -11,6 +11,7 @@ const labels = {
   "general-science": "General Science",
   geography: "Geography",
   economy: "Economy",
+  "social-issues": "Social Issues",
   "competitive-exams": "Competitive Exams",
   "previous-papers": "Previous Papers",
 };
@@ -21,6 +22,7 @@ const icons = {
   "general-science": "🔬",
   geography: "🌍",
   economy: "📈",
+  "social-issues": "🌐",
   "competitive-exams": "🎯",
   "previous-papers": "📝",
 };
