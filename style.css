@@ -1305,8 +1305,10 @@ footer small{
 #about .about-content p{
     width:100%;
     max-width:100%;
-    text-align:justify;
-    text-justify:inter-word;
+    text-align:left;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:18px;
 }
 
   /* =======================================================
