@@ -1303,8 +1303,10 @@ footer small{
     display:block;
   }
 #about .about-content p{
-    text-align:left;
-    text-justify:auto;
+    width:100%;
+    max-width:100%;
+    text-align:justify;
+    text-justify:inter-word;
 }
 
   /* =======================================================
