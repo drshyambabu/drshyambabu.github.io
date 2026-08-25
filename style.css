@@ -982,6 +982,70 @@ section{
   min-width:0;
   max-width:100%;
 }
+.resource{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+
+  min-width:0;
+
+  padding:4px 0;
+
+  color:#17324a;
+
+  text-decoration:none;
+
+  transition:
+    color .2s ease,
+    transform .2s ease;
+}
+
+.resource .icon{
+  flex:0 0 auto;
+
+  font-size:15px;
+
+  line-height:1.4;
+
+  margin-top:1px;
+}
+
+.resource > div{
+  min-width:0;
+}
+
+.resource b{
+  display:block;
+
+  color:#17324a;
+
+  font-size:13px;
+  font-weight:650;
+
+  line-height:1.45;
+
+  margin:0 0 3px;
+
+  overflow-wrap:anywhere;
+}
+
+.resource small{
+  display:block;
+
+  color:#71808c;
+
+  font-size:10px;
+
+  line-height:1.4;
+}
+
+.resource:hover{
+  color:#0d5b89;
+}
+
+.resource:hover b{
+  color:#0d5b89;
+}
 
 
 /* =========================================================
