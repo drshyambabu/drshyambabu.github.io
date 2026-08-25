@@ -656,8 +656,9 @@ section{
 }
 
 /* Remove any two-column restriction */
-#about {
-    display: block;
+#about{
+    display:block;
+    padding-bottom:55px;
 }
 
 #about > * {
