@@ -1302,7 +1302,10 @@ footer small{
   #menu{
     display:block;
   }
-
+#about .about-content p{
+    text-align:left;
+    text-justify:auto;
+}
 
   /* =======================================================
      CONTAINER
