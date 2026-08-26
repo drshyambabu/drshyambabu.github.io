@@ -1217,6 +1217,14 @@ footer small{
     max-width:1120px;
   }
 
+  /* HERO MUST BE FULL WIDTH */
+  .hero > .container{
+    width:100%;
+    max-width:100%;
+    padding-left:40px;
+    padding-right:40px;
+  }
+
   .nav{
     gap:15px;
   }
@@ -1274,7 +1282,6 @@ footer small{
   }
 
 }
-
 /* =========================================================
    TABLET
 ========================================================= */
