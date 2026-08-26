@@ -1233,8 +1233,8 @@ footer small{
 
     gap:35px;
 
-    padding-top:55px;
-    padding-bottom:55px;
+    padding-top:65px;
+    padding-bottom:65px;
   }
 
   .heroContent{
@@ -1243,13 +1243,13 @@ footer small{
   }
 
   .heroContent h1{
-    font-size:42px;
+    font-size:46px;
     line-height:1.02;
     letter-spacing:-1.8px;
   }
 
   .heroContent h2{
-    font-size:21px;
+    font-size:24px;
   }
 
   .heroAffiliation{
