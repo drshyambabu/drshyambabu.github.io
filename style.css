@@ -1211,7 +1211,7 @@ footer small{
    Same visual proportions as the preferred 150% view
    ========================================================= */
 
-@media (min-width:1001px) and (max-width:1400px){
+@media (min-width:1001px) and (max-width:1700px){
 
   .container{
     width:94%;
