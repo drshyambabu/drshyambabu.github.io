@@ -1205,7 +1205,74 @@ footer small{
 
   font-size:11px;
 }
+/* =========================================================
+   LAPTOP / MEDIUM DESKTOP
+   ========================================================= */
 
+@media (min-width:1001px) and (max-width:1200px){
+
+  .container{
+    width:94%;
+    max-width:1120px;
+  }
+
+  .nav{
+    gap:15px;
+  }
+
+  .nav nav{
+    gap:15px;
+  }
+
+  .nav nav a{
+    font-size:12px;
+  }
+
+  .heroGrid{
+    grid-template-columns:
+      minmax(0,1fr)
+      300px;
+
+    gap:35px;
+
+    padding-top:55px;
+    padding-bottom:55px;
+  }
+
+  .heroContent{
+    max-width:100%;
+  }
+
+  .heroContent h1{
+    font-size:56px;
+    letter-spacing:-2px;
+  }
+
+  .heroContent h2{
+    font-size:23px;
+  }
+
+  .heroAffiliation,
+  .lead{
+    font-size:13px;
+  }
+
+  .heroText{
+    max-width:600px;
+    font-size:12px;
+  }
+
+  .profileImageBox{
+    width:205px;
+    height:205px;
+    flex-basis:205px;
+  }
+
+  .section{
+    padding:65px 0;
+  }
+
+}
 
 /* =========================================================
    TABLET
