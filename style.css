@@ -270,7 +270,7 @@ header{
     linear-gradient(
       110deg,
       #173f59 0%,
-      #42657a 48%,
+      #42657a 62%,
       #b8c8d0 100%
     );
 
@@ -1242,13 +1242,13 @@ footer small{
     minmax(0,1fr)
     300px;
 
-  gap:55px;
+  gap:00px;
 
   padding-top:65px;
   padding-bottom:65px;
 
-  padding-left:45px;
-  padding-right:30px;
+  padding-left:60px;
+  padding-right:40px;
 
   min-height:505px;
   box-sizing:border-box;
