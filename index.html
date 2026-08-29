@@ -495,7 +495,11 @@ placeholder="Search notes, subject or file…"
     📊 <b>Economics</b>
     <small>Indian Economy • Development • Policy</small>
 </button>
-      
+
+      <button type="button" class="econtent-button" onclick="toggleEContents()">
+    📘 <b>E-Contents</b>
+    <small>Digital Learning Resources</small>
+</button>
 
 <button data-cat="polity">
 ⚖️ <b>Indian Polity</b>
@@ -528,7 +532,183 @@ placeholder="Search notes, subject or file…"
 
 </div>
 
+<div id="eContentsPanel" class="econtents-panel">
 
+    <button type="button"
+            class="econtent-course"
+            onclick="toggleClassicalMechanics()">
+
+        📘 <b>Classical Mechanics — UG E-Content</b>
+
+        <span id="cmArrow">+</span>
+
+    </button>
+
+
+    <div id="classicalMechanicsContent">
+
+        <h2>Classical Mechanics — UG E-Content</h2>
+
+        <p>
+            Undergraduate Physics | Four-Quadrant Learning Resources
+        </p>
+
+
+        <div class="cm-module">
+
+            <h3>Module 1 — Constrained Motion</h3>
+
+            <div class="cm-quadrants">
+
+                <a href="#" class="cm-q">
+                    <b>Q1 — e-Tutorial</b>
+                    <small>Video Lectures</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q2 — e-Content</b>
+                    <small>Lecture Notes / PDF</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q3 — Web Resources</b>
+                    <small>Additional Learning Resources</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q4 — Self Assessment</b>
+                    <small>MCQs / Problems / Quiz</small>
+                </a>
+
+            </div>
+
+            <p>
+                <b>Topics:</b>
+                Constraints, Degrees of Freedom, Configuration Space,
+                Generalized Coordinates, Virtual Work and
+                D'Alembert's Principle.
+            </p>
+
+        </div>
+
+
+        <div class="cm-module">
+
+            <h3>Module 2 — Lagrangian Formalism</h3>
+
+            <div class="cm-quadrants">
+
+                <a href="#" class="cm-q">
+                    <b>Q1 — e-Tutorial</b>
+                    <small>Video Lectures</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q2 — e-Content</b>
+                    <small>Lecture Notes / PDF</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q3 — Web Resources</b>
+                    <small>Additional Learning Resources</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q4 — Self Assessment</b>
+                    <small>MCQs / Problems / Quiz</small>
+                </a>
+
+            </div>
+
+            <p>
+                <b>Topics:</b>
+                Lagrangian for Conservative and Non-Conservative Systems,
+                Lagrange's Equations, Cyclic Coordinates,
+                Conservation Laws and Applications.
+            </p>
+
+        </div>
+
+
+        <div class="cm-module">
+
+            <h3>Module 3 — Hamiltonian Formalism</h3>
+
+            <div class="cm-quadrants">
+
+                <a href="#" class="cm-q">
+                    <b>Q1 — e-Tutorial</b>
+                    <small>Video Lectures</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q2 — e-Content</b>
+                    <small>Lecture Notes / PDF</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q3 — Web Resources</b>
+                    <small>Additional Learning Resources</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q4 — Self Assessment</b>
+                    <small>MCQs / Problems / Quiz</small>
+                </a>
+
+            </div>
+
+            <p>
+                <b>Topics:</b>
+                Phase Space, Hamiltonian, Hamilton's Equations,
+                Cyclic Coordinates, Lagrangian–Hamiltonian Formulation
+                and Construction of Hamiltonian from Lagrangian.
+            </p>
+
+        </div>
+
+
+        <div class="cm-module">
+
+            <h3>Module 4 — Central Force</h3>
+
+            <div class="cm-quadrants">
+
+                <a href="#" class="cm-q">
+                    <b>Q1 — e-Tutorial</b>
+                    <small>Video Lectures</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q2 — e-Content</b>
+                    <small>Lecture Notes / PDF</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q3 — Web Resources</b>
+                    <small>Additional Learning Resources</small>
+                </a>
+
+                <a href="#" class="cm-q">
+                    <b>Q4 — Self Assessment</b>
+                    <small>MCQs / Problems / Quiz</small>
+                </a>
+
+            </div>
+
+            <p>
+                <b>Topics:</b>
+                Central Force, Equation of Motion,
+                Differential Equation of Orbit, Bound and Unbound Orbits,
+                Bertrand's Theorem, Inverse Square Law, Kepler's Laws
+                and Laplace–Runge–Lenz Vector.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 <!-- ALL RESOURCES -->
 
 <div class="repoBar">
