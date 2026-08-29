@@ -132,3 +132,39 @@ document.getElementById("menu").onclick = () => {
   n.style.border = "1px solid #e5eaf0";
   n.style.borderRadius = "12px";
 };
+function toggleEContents(){
+
+  const panel =
+    document.getElementById("eContentsPanel");
+
+  if(panel.style.display === "block"){
+    panel.style.display = "none";
+  }else{
+    panel.style.display = "block";
+  }
+
+}
+
+
+function toggleClassicalMechanics(){
+
+  const content =
+    document.getElementById("classicalMechanicsContent");
+
+  const arrow =
+    document.getElementById("cmArrow");
+
+  if(content.style.display === "block"){
+
+    content.style.display = "none";
+    arrow.innerHTML = "+";
+
+  }else{
+
+    content.style.display = "block";
+    arrow.innerHTML = "−";
+
+  }
+
+}
+
