@@ -757,7 +757,7 @@ section{
 
 
 /* =========================================================
-   TEACHING
+   E-CONTENT 
 ========================================================= */
 
 .soft{
@@ -1319,9 +1319,9 @@ footer small{
    MOBILE — MAIN FIX
 ========================================================= */
 
-/* Desktop: small gap between Teaching and Research */
+/* Desktop: small gap between E-content and Research */
 @media (min-width:821px){
-  #teaching > .container + .container{
+  #e-content > .container + .container{
     margin-top:16px;
   }
 }
@@ -1606,7 +1606,7 @@ footer small{
 
 
   /* =======================================================
-     TEACHING / RESEARCH
+     E-CONTENT / RESEARCH
   ======================================================= */
 
   .grid3{
@@ -1796,7 +1796,7 @@ footer small{
 
 
   /* -------------------------------------------------------
-     TEACHING & RESEARCH
+     E-CONTENT & RESEARCH
   ------------------------------------------------------- */
 
   .grid3{
