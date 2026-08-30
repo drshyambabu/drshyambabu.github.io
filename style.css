@@ -1320,10 +1320,9 @@ footer small{
 ========================================================= */
 
 /* Desktop: small gap between E-content and Research */
-@media (min-width:821px){
-  #e-content > .container + .container{
-    margin-top:16px;
-  }
+/* Space between E-Content and Research */
+#teaching > .container + .container{
+    margin-top:55px !important;
 }
 @media (max-width:820px){
 
