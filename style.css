@@ -2412,3 +2412,15 @@ footer small{
   .ecm-wrapper {
     overflow-x: hidden;
   }
+
+.cm-q.q3 a {
+  display: block;
+  color: #000080;
+  text-decoration: underline;
+  font-size: 13px;
+  padding: 3px 0;
+}
+
+.cm-q.q3 a:hover {
+  text-decoration: none;
+}
