@@ -2287,16 +2287,82 @@ footer small{
 }
 
 
-/* MOBILE */
+/* =========================================================
+   CLASSICAL MECHANICS — RESPONSIVE
+   ========================================================= */
 
-@media(max-width:700px){
+@media (max-width:700px){
+
+  .cm-module{
+    padding:12px 8px;
+    overflow:hidden;
+  }
+
+  .cm-module h3{
+    font-size:15px;
+    line-height:1.35;
+    margin-bottom:10px;
+  }
 
   .cm-quadrants{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    width:100%;
+  }
+
+  .cm-q{
+    min-width:0;
+    padding:10px 5px;
+    font-size:11px;
+    line-height:1.3;
+    overflow-wrap:anywhere;
+  }
+
+  .cm-q b{
+    font-size:11px;
+  }
+
+  .cm-q small{
+    font-size:9px;
   }
 
   #classicalMechanicsContent h2{
     font-size:20px;
+    line-height:1.3;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width:420px){
+
+  .cm-module{
+    padding:10px 5px;
+  }
+
+  .cm-module h3{
+    font-size:14px;
+  }
+
+  .cm-quadrants{
+    gap:6px;
+  }
+
+  .cm-q{
+    padding:9px 3px;
+    font-size:10px;
+  }
+
+  .cm-q b{
+    font-size:10px;
+  }
+
+  .cm-q small{
+    font-size:8px;
   }
 
 }
