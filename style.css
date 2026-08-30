@@ -2424,8 +2424,3 @@ footer small{
 .cm-q.q3 a:hover {
   text-decoration: none;
 }
-
-/* Space after E-Content section */
-.ug-econtent {
-    padding-bottom: 70px !important;
-}
