@@ -1,110 +1,160 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
+document.getElementById("year").textContent = new Date().getFullYear();
+const OWNER = "drshyambabu",
+  REPO = "drshyambabu.github.io",
+  BRANCH = "main",
+  ROOT = "study-material";
+const labels = {
+  all: "All Resources",
+  physics: "Physics",
+  history: "History",
+  polity: "Indian Polity",
+  "general-science": "General Science",
+  geography: "Geography",
+  economy: "Economy",
+  "social-issues": "Social Issues",
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1">
+  "ai-technology": "AI & Technology",
+  environment: "Environment",
+  economics: "Economics",
 
-<!-- Primary SEO -->
-<title>Dr. Shyam Babu | Assistant Professor of Physics | Academic & Research</title>
+  "competitive-exams": "Competitive Exams",
+  "previous-papers": "Previous Papers",
+};
+const icons = {
+  physics: "⚛️",
+  history: "🏛️",
+  polity: "⚖️",
+  "general-science": "🔬",
+  geography: "🌍",
+  economy: "📈",
+  "social-issues": "🌐",
 
-<meta name="description"
-      content="Dr. Shyam Babu, Assistant Professor of Physics at RHS P.G. College, Jaunpur. Explore academic profile, research publications, nanomagnetism, spintronics, teaching resources and study materials.">
+  "ai-technology": "🤖",
+  environment: "🌱",
+  economics: "📊",
 
-<meta name="author" content="Dr. Shyam Babu">
+  "competitive-exams": "🎯",
+  "previous-papers": "📝",
+};
+let files = [],
+  active = "all";
+const el = (id) => document.getElementById(id);
+function title(path) {
+  return path
+    .split("/")
+    .pop()
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+function category(path) {
+  let p = path.split("/"),
+    i = p.indexOf(ROOT);
+  return i >= 0 && p[i + 1] ? p[i + 1].toLowerCase() : "";
+}
+async function load() {
+  el("status").textContent = "Reading GitHub repository…";
+  const u = `https://api.github.com/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`;
+  const r = await fetch(u, {
+    headers: { Accept: "application/vnd.github+json" },
+  });
+  if (!r.ok) throw Error("GitHub API " + r.status);
+  const d = await r.json();
+  files = (d.tree || [])
+    .filter(
+      (x) =>
+        x.type === "blob" &&
+        /\.pdf$/i.test(x.path) &&
+        x.path.toLowerCase().startsWith(ROOT + "/")
+    )
+    .map((x) => {
+      let c = category(x.path);
+      return {
+        path: x.path,
+        title: title(x.path),
+        category: c,
+        url: `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/${x.path .split("/") .map(encodeURIComponent) .join("/")}`,
+      };
+    });
+  render();
+}
+function render() {
+  const q = el("search").value.toLowerCase().trim();
+  const shown = files.filter(
+    (f) =>
+      (active === "all" || f.category === active) &&
+      (!q ||
+        f.title.toLowerCase().includes(q) ||
+        f.path.toLowerCase().includes(q))
+  );
+  el("resources").innerHTML = shown
+    .map(
+      (f) =>
+        `<a class="resource" href="${ f.url }" target="_blank" rel="noopener"><span class="icon">${ icons[f.category] || "📄" }</span><div><b>${f.title}</b><small>${ labels[f.category] || "Study Material" } • PDF</small></div></a>`
+    )
+    .join("");
+  el("empty").hidden = shown.length > 0;
+  if (!shown.length)
+    el("empty").textContent = files.length
+      ? "No matching resources in this category."
+      : "No PDFs found inside study-material yet.";
+  el("status").textContent = `${shown.length} resource${ shown.length === 1 ? "" : "s" } available`;
+}
+document.querySelectorAll("#categories button").forEach(
+  (b) =>
+    (b.onclick = () => {
+      document
+        .querySelectorAll("#categories button")
+        .forEach((x) => x.classList.remove("active"));
+      b.classList.add("active");
+      active = b.dataset.cat;
+      el("heading").textContent = labels[active];
+      render();
+    })
+);
+el("search").oninput = render;
+load().catch((e) => {
+  el("status").textContent = "Could not read GitHub repository";
+  el("empty").hidden = false;
+  el("empty").textContent =
+    "Repository could not be read. Check that the repository is public and refresh.";
+  console.error(e);
+});
+document.getElementById("menu").onclick = () => {
+  let n = document.querySelector("nav");
+  n.style.display = n.style.display === "flex" ? "none" : "flex";
+  n.style.flexDirection = "column";
+  n.style.position = "absolute";
+  n.style.right = "4%";
+  n.style.top = "68px";
+  n.style.background = "#fff";
+  n.style.padding = "18px";
+  n.style.border = "1px solid #e5eaf0";
+  n.style.borderRadius = "12px";
+};
+function toggleEContents() {
+  const panel = document.getElementById("eContentsPanel");
 
-<meta name="robots"
-      content="index, follow">
+  if (panel.style.display === "block") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "block";
+  }
+}
 
-<!-- Canonical URL -->
-<link rel="canonical"
-      href="https://drshyambabu.in/">
+function toggleClassicalMechanics() {
+  const content = document.getElementById("classicalMechanicsContent");
 
-<!-- Open Graph / Facebook / WhatsApp -->
-<meta property="og:type"
-      content="website">
+  const arrow = document.getElementById("cmArrow");
 
-<meta property="og:title"
-      content="Dr. Shyam Babu | Assistant Professor of Physics">
-
-<meta property="og:description"
-      content="Academic profile, research publications, teaching resources and study materials of Dr. Shyam Babu.">
-
-<meta property="og:url"
-      content="https://drshyambabu.in/">
-
-<meta property="og:image"
-      content="https://drshyambabu.in/profile.jpg">
-
-<meta property="og:image:alt"
-      content="Dr. Shyam Babu">
-
-<meta property="og:site_name"
-      content="Dr. Shyam Babu">
-
-<!-- Twitter / X -->
-<meta name="twitter:card"
-      content="summary_large_image">
-
-<meta name="twitter:title"
-      content="Dr. Shyam Babu | Assistant Professor of Physics">
-
-<meta name="twitter:description"
-      content="Academic profile, research publications, teaching resources and study materials.">
-
-<meta name="twitter:image"
-      content="https://drshyambabu.in/profile.jpg">
-
-<meta name="twitter:image:alt"
-      content="Dr. Shyam Babu">
-
-<!-- Academic Person Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-
-    {
-      "@type": "Person",
-      "@id": "https://drshyambabu.in/#person",
-      "name": "Dr. Shyam Babu",
-      "url": "https://drshyambabu.in/",
-      "image": "https://drshyambabu.in/profile.jpg",
-      "jobTitle": "Assistant Professor of Physics",
-      "description": "Assistant Professor of Physics, academic researcher and educator working in materials physics, nanomagnetism and spintronics.",
-      "worksFor": {
-        "@type": "CollegeOrUniversity",
-        "name": "RHS P.G. College",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Singramau",
-          "addressRegion": "Uttar Pradesh",
-          "addressCountry": "IN"
-        }
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Indian Institute of Technology (BHU), Varanasi"
-      },
-      "sameAs": [
-        "https://scholar.google.com/citations?hl=en&user=-Z7cWC0AAAAJ",
-        "https://orcid.org/0000-0002-2892-9175",
-        "https://www.researchgate.net/profile/Shyam-Babu-5",
-        "https://www.linkedin.com/in/dr-shyam-babu-22aa5a166",
-        "https://www.facebook.com/share/1D27x9dLiP/",
-        "https://www.instagram.com/babushyamonline14",
-        "https://youtube.com/@shyamnpriya"
-      ]
-    },
-
-    {
-      "@type": "WebSite",
-      "@id": "https://drshyambabu.in/#website",
-      "url": "https://drshyambabu.in/",
-      "name": "Dr. Shyam Babu | Academic & Research Repository",
-      "description": "Academic profile, research publications, teaching resources and study materials.",
-      "publisher": {
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    arrow.innerHTML = "+";
+  } else {
+    content.style.display = "block";
+    arrow.innerHTML = "−";
+  }
+}      "publisher": {
         "@id": "https://drshyambabu.in/#person"
       }
     },
