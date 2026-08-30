@@ -2424,3 +2424,7 @@ footer small{
 .cm-q.q3 a:hover {
   text-decoration: none;
 }
+   /* Space between E-Content and Research */
+.econtent-section > .container:first-child {
+    margin-bottom: 55px;
+}
