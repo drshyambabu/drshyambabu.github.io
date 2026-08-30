@@ -1319,9 +1319,8 @@ footer small{
    MOBILE — MAIN FIX
 ========================================================= */
 
-/* Desktop: small gap between E-content and Research */
 /* Space between E-Content and Research */
-#teaching > .container + .container{
+#e-content > .ug-econtent + .container{
     margin-top:55px !important;
 }
 @media (max-width:820px){
