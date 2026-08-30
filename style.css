@@ -2273,10 +2273,7 @@ footer small{
   text-align:center;
 }
 
-.cm-q.q1,
-.cm-q.q2,
-.cm-q.q3,
-.cm-q.q4 {
+.cm-module-1 .cm-q {
     color:#000080;
 }
 .cm-q b{
