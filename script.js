@@ -151,8 +151,8 @@ function toggleClassicalMechanics(){
   const content =
     document.getElementById("classicalMechanicsContent");
 
-  const arrow =
-    document.getElementById("cmArrow");
+const arrow =
+    document.getElementById("cm-arrow");
 
   if(content.style.display === "block"){
 
@@ -168,3 +168,20 @@ function toggleClassicalMechanics(){
 
 }
 
+function openUGContent(){
+
+  const panel =
+    document.getElementById("ugContent");
+
+  if(!panel) return;
+
+  panel.style.display = "block";
+
+  setTimeout(() => {
+    panel.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 50);
+
+}
