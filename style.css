@@ -2419,18 +2419,3 @@ footer small{
   text-decoration: none;
 }
 
-   /* =========================================================
-   E-CONTENT / RESEARCH — DESKTOP ALIGNMENT ONLY
-   ========================================================= */
-
-@media (min-width:821px){
-
-  #e-content > .container,
-  #e-content > #ugContent > .container{
-    width:min(1160px,94%);
-    max-width:1160px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-}
