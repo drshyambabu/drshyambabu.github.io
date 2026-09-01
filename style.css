@@ -1220,10 +1220,10 @@ footer small{
 
   /* HERO */
   .hero > .container{
-    width:100%;
-    max-width:100%;
-    padding-left:24px;
-    padding-right:24px;
+    width:94%;
+    max-width:1160px;
+    padding-left:0;
+    padding-right:0;
   }
 
   .heroGrid{
