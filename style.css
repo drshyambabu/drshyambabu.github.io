@@ -2256,21 +2256,6 @@ footer small{
   grid-template-columns:repeat(4,1fr);
   gap:10px;
 }
-
-.cm-q{
-  display:block;
-
-  padding:13px 10px;
-
-  border:1px solid #dbe5ea;
-  border-radius:9px;
-
-  background:#ffffff;
-  color:#173b52;
-
-  text-align:center;
-}
-
 .cm-q{
   display:block;
 
@@ -2284,6 +2269,7 @@ footer small{
 
   text-align:center;
 }
+
 .cm-q b{
   display:block;
   font-size:13px;
