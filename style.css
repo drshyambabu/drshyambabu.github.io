@@ -1937,61 +1937,6 @@ footer small{
     animation:none !important;
   }
 
-}    min-width:145px !important;
-    min-height:145px !important;
-
-    max-width:145px !important;
-    max-height:145px !important;
-
-    border-radius:50% !important;
-
-    overflow:hidden !important;
-
-    padding:0 !important;
-    margin:0 !important;
-
-    border:5px solid #ffffff !important;
-
-    background:#ffffff !important;
-
-    box-shadow:
-      0 10px 28px rgba(0,0,0,.20) !important;
-  }
-
-  .profileImageBox img{
-    display:block !important;
-
-    width:100% !important;
-    height:100% !important;
-
-    max-width:none !important;
-
-    object-fit:cover !important;
-
-    object-position:center center !important;
-
-    border-radius:50% !important;
-
-    margin:0 !important;
-    padding:0 !important;
-  }
-
-  /* =======================================================
-     HERO BUTTONS
-  ======================================================= */
-
-  .heroButtons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-  }
-
-  .heroButtons .btn{
-    max-width:100%;
-  }
-
-}
-
 
 /* =========================================================
    SMALL MOBILE — ≤ 480px
