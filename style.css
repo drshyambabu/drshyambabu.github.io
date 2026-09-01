@@ -2271,8 +2271,18 @@ footer small{
   text-align:center;
 }
 
-.cm-module-1 .cm-q {
-    color:#000080;
+.cm-q{
+  display:block;
+
+  padding:13px 10px;
+
+  border:1px solid #dbe5ea;
+  border-radius:9px;
+
+  background:#ffffff;
+  color:#000080;
+
+  text-align:center;
 }
 .cm-q b{
   display:block;
