@@ -1214,16 +1214,16 @@ footer small{
 @media (min-width:1001px) and (max-width:1700px){
 
   .container{
-    width:94%;
-    max-width:1160px;
+    width:96%;
+    max-width:none;
   }
 
   /* HERO */
   .hero > .container{
-    width:94%;
-    max-width:1160px;
-    padding-left:0;
-    padding-right:0;
+    width:100%;
+    max-width:100%;
+    padding-left:24px;
+    padding-right:24px;
   }
 
   .heroGrid{
