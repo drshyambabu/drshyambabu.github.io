@@ -142,6 +142,24 @@ async function load() {
 
     /* =========================
        HTML STUDY ARTICLES
+       
+       ONLY CATEGORY-LEVEL PAGES
+       WILL APPEAR ON HOMEPAGE.
+       
+       Example:
+       study/geography/indian-rivers/index.html
+                             ↑
+                  length = 4 → SHOW
+
+       But:
+       study/geography/index.html
+                       ↑
+                  length = 3 → HIDE
+
+       And:
+       study/geography/indian-rivers/ganga-river/index.html
+                                      ↑
+                  length = 5 → HIDE
     ========================= */
 
     const htmlFiles = (d.tree || [])
@@ -160,6 +178,10 @@ async function load() {
                     .startsWith(
                         "study-material/"
                     )
+        )
+        .filter(
+            (x) =>
+                x.path.split("/").length === 4
         )
         .map((x) => {
 
